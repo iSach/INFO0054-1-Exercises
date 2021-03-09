@@ -1,0 +1,15 @@
+(cond ((eq? x 1) 'un)
+	  ((eq? x 2) 'deux)
+      ((eq? x 3) 'trois)
+      ((eq? x 4) 'quatre)
+	  ((eq? x 5) 'cinq)
+	  (else 'inconnu))
+
+(define sayit
+	(lambda (x)
+		(cond ((eq? x 1) 'un)
+	  		((eq? x 2) 'deux)
+      		((eq? x 3) 'trois)
+      		((eq? x 4) 'quatre)
+	  		((eq? x 5) 'cinq)
+	  		(else 'inconnu))))

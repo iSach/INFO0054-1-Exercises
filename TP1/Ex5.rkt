@@ -1,0 +1,1 @@
+(define sum-int (lambda (n) (if (eq? n 1) 1 (+ n (sum-int (- n 1))))))

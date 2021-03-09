@@ -1,0 +1,9 @@
+(lambda (y x) (cons x y))				-> #<procedure>
+((lambda (y x) (cons x y)) ’() ’a)		-> #<procedure>
+(define id (lambda (x) x))				-> defines fct id that returns its sole argument.
+(id 1)									-> 1
+(id ’(1 2 3))							-> (1 2 3)
+(((id id) (id id)) 3)					->  (3)
+= ((id id) 3)	
+= (id 3) 
+-> [[(id 3)]] = 3
