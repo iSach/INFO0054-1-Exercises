@@ -6,14 +6,10 @@
 
 (define my-map-aux
   (lambda (f lls ys)
-    (display lls)
-    (display "\n")
     (if (null? (car lls))
         ys
-        (let* ([cutlists (cut-lls lls '() '())]
-               [cars (car cutlists)]
-               [cdrs (cdr cutlists)])
-          (my-map-aux f cdrs (cons (apply f cars) ys))))))
+        (let ([cutlists (cut-lls lls '() '())])
+          (my-map-aux f (cdr cutlists) (cons (apply f (car cutlists)) ys))))))
         
 
 ; list of lists -> ((list of cars) (list of cdrs))
@@ -23,6 +19,6 @@
 (define cut-lls
   (lambda (lls cars cdrs)
     (if (null? lls)
-        (cons cars cdrs)
+        (cons (reverse cars) (reverse cdrs))
         (let ([ls (car lls)])
           (cut-lls (cdr lls) (cons (car ls) cars) (cons (cdr ls) cdrs))))))
